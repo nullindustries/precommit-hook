@@ -15,7 +15,7 @@ function getRoot() {
             process.exit(1);
         }
         var path = stderr.trim(),
-            config = require(path + '/package.json'),
+            config = require(path + 'app/package.json'),
             myconfig = config.config && config.config.precommit ? config.config.precommit : undefined;
         runJshint(stdout, config, myconfig);
     });

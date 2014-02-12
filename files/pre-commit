@@ -8,7 +8,6 @@ var exists = require('fs').existsSync;
 var path = require('path');
 path.resolve("app/");
 
-console.log __dir
 function getRoot() {
     exec('git rev-parse --show-toplevel', function (err, stderr, stdout) {
         if (err) {

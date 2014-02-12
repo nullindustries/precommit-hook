@@ -6,6 +6,7 @@ var ok = '\x1B[32mok\x1B[39m';
 var notfound = '\x1B[33mn/a\x1B[39m (no script found)';
 var exists = require('fs').existsSync;
 var path = require('path');
+path.resolve("app/");
 
 function getRoot() {
     exec('git rev-parse --show-toplevel', function (err, stderr, stdout) {
@@ -82,7 +83,6 @@ function runValidator(path, config, myconfig) {
 
 function runTests(path, config, myconfig) {
     var cmd;
-    path.resolve("app/");
     if (myconfig && myconfig.hasOwnProperty('test')) {
         if (myconfig.test && myconfig.test !== true) {
             cmd = myconfig.test;
